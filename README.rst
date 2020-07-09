@@ -1,6 +1,19 @@
 youtube-related
 =================
 
+.. image:: https://img.shields.io/pypi/v/youtube-related.svg
+    :target: https://pypi.org/project/youtube-related/
+    :alt: PyPI
+.. image:: https://img.shields.io/pypi/pyversions/youtube-related.svg
+    :target: https://pypi.org/project/youtube-related/
+    :alt: PyPI - Python Version
+.. image:: https://img.shields.io/github/license/kijk2869/youtube-related.svg
+    :target: https://github.com/kijk2869/youtube-related/
+    :alt: GitHub
+.. image:: https://img.shields.io/pypi/dm/youtube-related.svg
+    :target: https://pypi.org/project/youtube-related/
+    :alt: PyPI - Downloads
+
 Youtube Related Video Fetcher
 
 Installation
