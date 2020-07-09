@@ -29,4 +29,4 @@ YouTube's featured video may be repeated regularly, and deque was used to preven
 
     Avoider = preventDuplication()
 
-    print(preventDuplication.get('Some Youtube Video URL'))
+    print(Avoider.get('Some Youtube Video URL'))
