@@ -4,7 +4,7 @@ import json
 DATA_JSON = re.compile(r'window\["ytInitialData"\]\s\=\s(\{.*\})')
 
 
-def loadInitialData(RAW: str) -> dict:
+def __loadInitialData(RAW: str) -> dict:
     Search = DATA_JSON.search(RAW)
 
     if not Search:
@@ -17,7 +17,7 @@ def loadInitialData(RAW: str) -> dict:
 
 
 def parse(RAW: str) -> list:
-    Data = loadInitialData(RAW)
+    Data = __loadInitialData(RAW)
 
     Overlay = Data['playerOverlays']['playerOverlayRenderer']
     watchNextEndScreenRenderer = Overlay['endScreen']['watchNextEndScreenRenderer']
