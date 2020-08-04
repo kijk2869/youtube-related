@@ -1,5 +1,5 @@
-﻿import re
-import json
+﻿import json
+import re
 
 DATA_JSON = re.compile(r'window\["ytInitialData"\]\s\=\s(\{.*\})')
 
@@ -19,18 +19,18 @@ def __loadInitialData(RAW: str) -> dict:
 def parse(RAW: str) -> list:
     Data = __loadInitialData(RAW)
 
-    Overlay = Data['playerOverlays']['playerOverlayRenderer']
-    watchNextEndScreenRenderer = Overlay['endScreen']['watchNextEndScreenRenderer']
+    Overlay = Data["playerOverlays"]["playerOverlayRenderer"]
+    watchNextEndScreenRenderer = Overlay["endScreen"]["watchNextEndScreenRenderer"]
     Result = [
         {
-            'id': Item['videoId'],
-            'title': Item['title']['simpleText'],
-            'duration': Item['lengthInSeconds'] if 'lengthInSeconds' in Item else None
+            "id": Item["videoId"],
+            "title": Item["title"]["simpleText"],
+            "duration": Item["lengthInSeconds"] if "lengthInSeconds" in Item else None,
         }
         for Item in [
-            result['endScreenVideoRenderer']
-            for result in watchNextEndScreenRenderer['results']
-            if 'endScreenVideoRenderer' in result
+            result["endScreenVideoRenderer"]
+            for result in watchNextEndScreenRenderer["results"]
+            if "endScreenVideoRenderer" in result
         ]
     ]
 
