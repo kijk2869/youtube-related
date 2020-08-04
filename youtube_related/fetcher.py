@@ -12,8 +12,9 @@ def fetch(vURL: str) -> str:
     return RAW
 
 
-async def async_fetch(vURL: str) -> str:
-    async with aiohttp.ClientSession(headers=headers) as session:
+async def async_fetch(vURL: str, local_addr: str = None) -> str:
+    connector = aiohttp.TCPConnector(local_addr=(local_addr, 0)) if local_addr else None
+    async with aiohttp.ClientSession(connector=connector,headers=headers) as session:
         async with session.get(vURL) as response:
             RAW = await response.text()
     return RAW
