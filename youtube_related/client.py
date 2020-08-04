@@ -1,5 +1,6 @@
 from collections import deque
-from .fetcher import fetch, async_fetch
+
+from .fetcher import async_fetch, fetch
 from .parser import parse
 
 
@@ -25,8 +26,8 @@ class preventDuplication:
         Data = get(vURL)
 
         for Item in Data:
-            if not Item['id'] in self._LastRelated:
-                self._LastRelated.append(Item['id'])
+            if not Item["id"] in self._LastRelated:
+                self._LastRelated.append(Item["id"])
                 return Item
 
         self._LastRelated.clear()
@@ -36,8 +37,8 @@ class preventDuplication:
         Data = await async_get(vURL)
 
         for Item in Data:
-            if not Item['id'] in self._LastRelated:
-                self._LastRelated.append(Item['id'])
+            if not Item["id"] in self._LastRelated:
+                self._LastRelated.append(Item["id"])
                 return Item
 
         self._LastRelated.clear()
