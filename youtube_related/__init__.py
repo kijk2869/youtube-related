@@ -12,7 +12,7 @@ from collections import namedtuple
 
 from .client import async_get, get, preventDuplication
 from .fetcher import async_fetch, fetch
-from .parser import loadInitialData, parse
+from .parser import parse
 
 VersionInfo = namedtuple("VersionInfo", "major minor micro releaselevel serial")
 
