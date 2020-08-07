@@ -1,5 +1,6 @@
 import aiohttp
 import requests
+
 from .error import RateLimited
 
 headers = {
@@ -19,6 +20,6 @@ async def async_fetch(vURL: str, local_addr: str = None) -> str:
         async with session.get(vURL) as response:
             if response.status == 429:
                 raise RateLimited
-            
+
             RAW = await response.text()
     return RAW
