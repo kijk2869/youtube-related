@@ -11,9 +11,9 @@ __version__ = "0.0.3"
 from collections import namedtuple
 
 from .client import async_get, get, preventDuplication
+from .error import *
 from .fetcher import async_fetch, fetch
 from .parser import parse
-from .error import *
 
 VersionInfo = namedtuple("VersionInfo", "major minor micro releaselevel serial")
 
