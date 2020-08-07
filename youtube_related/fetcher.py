@@ -1,5 +1,6 @@
 import aiohttp
 import requests
+from .error import RateLimited
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
@@ -16,5 +17,8 @@ async def async_fetch(vURL: str, local_addr: str = None) -> str:
     connector = aiohttp.TCPConnector(local_addr=(local_addr, 0)) if local_addr else None
     async with aiohttp.ClientSession(connector=connector, headers=headers) as session:
         async with session.get(vURL) as response:
+            if response.status == 429:
+                raise RateLimited
+            
             RAW = await response.text()
     return RAW
