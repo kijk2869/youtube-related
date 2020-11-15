@@ -32,7 +32,7 @@ Basic usage
 
     import youtube_related
 
-    print(youtube_related.get('Some Youtube Video URL'))
+    print(youtube_related.fetch('Some Youtube Video URL'))
 
 YouTube's featured video may be repeated regularly, and deque was used to prevent this.
 
@@ -40,6 +40,6 @@ YouTube's featured video may be repeated regularly, and deque was used to preven
 
     from youtube_related import preventDuplication
 
-    Avoider = preventDuplication()
+    Avoider: preventDuplication = preventDuplication()
 
     print(Avoider.get('Some Youtube Video URL'))
