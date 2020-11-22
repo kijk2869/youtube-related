@@ -6,11 +6,11 @@ Youtube Related Video Fetcher
 __title__ = "youtube_related"
 __author__ = "kijk2869"
 __lisence__ = "MIT"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 from collections import namedtuple
 
-from .client import async_get, get, preventDuplication
+from .client import fetch, async_fetch, preventDuplication
 from .error import *
 
 VersionInfo = namedtuple("VersionInfo", "major minor micro releaselevel serial")
