@@ -6,7 +6,7 @@ Youtube Related Video Fetcher
 __title__ = "youtube_related"
 __author__ = "kijk2869"
 __lisence__ = "MIT"
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 
 from collections import namedtuple
 
